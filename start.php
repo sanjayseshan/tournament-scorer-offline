@@ -28,17 +28,17 @@ if (isset($_POST['text']))
         if($responseData->success):*/
 		$name = $_POST['text'];
 		$nameenc = md5($_POST['text']);
-		if (file_exists($data) != 1) {
+		if (file_exists($nameenc) != 1) {
 			exec('cp -r ' . 'template/ ' . $nameenc);
 //			mkdir($data . '/images', 0777);
-//			copy('template/', $data . '/setup.php');
+//			copy('template/', $nameenc);
 			header( 'Location: ' . $nameenc . '/createpassword.php?data=' . $nameenc) ; 
 			$tournname = fopen($nameenc . '/tournament.txt', "w") or die("Unable to open file!");
 			fwrite($tournname, $name);
 			fclose($tournname);
 			echo 'success';
 		} else {
-			header( 'Location: /url.html#' . $data) ; 
+			header( 'Location: '. $nameenc . '/index.html#' . $data) ; 
 		}
 
 /*        else:
@@ -67,17 +67,17 @@ if (isset($_POST['text']))
 
 <!--<div class="g-recaptcha" data-sitekey="6LcK4DEUAAAAAAUGO2pq__6V0K51-DwreZYdOB3f"></div>-->
 
-<input id="sub" type="submit" />
-<input type="reset" />
+<input id="sub" value="Create" type="submit" />
+<input type="reset" value="Clear" />
 
 
-<br>
-If your tournament ALREADY exists, you will be taken directly to the urls. If your tournament DOES NOT exist yet, you will be asked to create a password(s).
+<br><!--
+If your tournament ALREADY exists, you will be taken directly to the urls. If your tournament DOES NOT exist yet, you will be asked to create a password(s).-->
 </p>
 
-Load Tournament:
 
 </form>
+<b>Load Existing Tournament:</b><br>
 <script>
 function loadtourn(tourn) {
 	document.getElementById('text').value = tourn

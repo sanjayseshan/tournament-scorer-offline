@@ -46,15 +46,6 @@ function textFileToArray(filename) {
   <script>
   document.write('<a href="readscores.html#'+dir+'">Score Displayer for Audience</a><br><br>');
   </script>
-
-  <b>STEP 4:</b> If you want a full screen timer:
-
-  <script>
-  document.write('<a href="/timer.html#'+dir+'">2:30 Timer</a><br><br>');
-  </script>
-
-
-  
 <!--
   <b>STEP 4:</b> If at any point, the Head Referee needs to make an
   adjustment to the scores because a scoring error is discovered, the
@@ -64,9 +55,9 @@ function textFileToArray(filename) {
     document.write('<a href="login.php?data=edit">Score Editor for Head Referee</a><br>');
   </script>-->
   <br>
-  <br><!--<script>
+  <br><script>
       document.write('<a href="recovery.php?data='+window.location.hash.substring(1)+'">Password Recovery</a><br>');
-</script>-->
+</script>
  <br>
  <br>
 The current version of the Tournament Scoring System is v<script>

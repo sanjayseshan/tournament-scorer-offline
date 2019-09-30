@@ -127,11 +127,12 @@ filter: alpha(opacity=60); /* For IE8 and earlier */
 
   </style>
 
-<script>langs=[]</script>
+  <script>language="en"</script>
+  
+<script src="languages.js"></script>
 
 <script src="language-detector.js">  </script>
 
-<script src="languages.js"></script>
 
 </head>
 
@@ -176,9 +177,9 @@ function getParameterByName(name, url) {
 }
 
   if (getParameterByName('team') != null) {
-  document.write('Team #'+getParameterByName('team'))
-  document.write('<br>Round #'+getParameterByName('round'))
-  document.write('<br>Tournament ID#: '+getParameterByName('tourn'))
+  document.write('<b style="font-size: 150%;">Team #'+getParameterByName('team'))
+  document.write('<br>Round #'+getParameterByName('round')+'</b>')
+  //document.write('<br>Tournament ID#: '+getParameterByName('tourn'))
   }
   </script>
 
@@ -704,7 +705,7 @@ function textFileToArray(filename)
 
 
 
-Scoring System Version 3.4.0
+Scoring System Version 3.4.0 Tournament 3.1.0
 <br>Copyright (c) 2019 Seshan Brothers
 <script>
 /*if (language =='he') {
