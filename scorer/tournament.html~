@@ -1,0 +1,38 @@
+
+
+
+<iframe style="display: none;" id="saveframe"></iframe>
+
+<input onclick="savetoserver();" type="button" value="Save Score">
+<input onclick="window.location.href = '/'+tourn+'/loadscorer.html';" type="button" value="Return to Score Manager">
+
+<script>
+    round = getParameterByName('round');
+      team = getParameterByName('team');
+      tourn = getParameterByName('tourn');
+
+  function savetoserver() {
+    points = parseInt(document.getElementById('allpoints').innerHTML)
+    getvar() //var store
+    round = getParameterByName('round');
+      team = getParameterByName('team');
+      tourn = getParameterByName('tourn');
+
+      filename = team +'-'+round+'.txt'
+      savedata = points+';'+store
+
+      document.getElementById('saveframe').src = encodeURI('/'+tourn+'/save.php?fname=' + filename+'&data='+savedata);
+    alert('Saved Score '+points+' points')
+  }
+function textFileToArray(filename)
+{
+    var reader = (window.XMLHttpRequest != null )
+               ? new XMLHttpRequest()
+               : new ActiveXObject("Microsoft.XMLHTTP");
+    reader.open("GET", filename, false );
+    reader.send();
+    return reader.responseText.split('\n'); //.split(/(\r\n|\n)/g);
+}
+
+
+</script>
