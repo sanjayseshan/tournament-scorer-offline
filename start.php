@@ -1,15 +1,3 @@
-<h1>EV3Lessons Tournament Scoring System v<script>
-function textFileToArray(filename) {
-    var reader = (window.XMLHttpRequest != null )
-               ? new XMLHttpRequest()
-               : new ActiveXObject("Microsoft.XMLHTTP");
-    reader.open("GET", filename, false );
-    reader.send();
-    return reader.responseText.split(/\r\n|\n|\r/);  //split(/(\r\n|\n)/g)
-}
-document.write(textFileToArray('/version.txt')[0]);
-  </script>
-</h1>
 <?php
 
 // configuration
@@ -38,7 +26,7 @@ if (isset($_POST['text']))
 			fclose($tournname);
 			echo 'success';
 		} else {
-			header( 'Location: '. $nameenc . '/index.html#' . $data) ; 
+			header( 'Location: '. $nameenc . '/index.html#') ; 
 		}
 
 /*        else:
@@ -57,6 +45,18 @@ if (isset($_POST['text']))
 
 
 ?>
+<h1>EV3Lessons Tournament Scoring System v<script>
+function textFileToArray(filename) {
+    var reader = (window.XMLHttpRequest != null )
+               ? new XMLHttpRequest()
+               : new ActiveXObject("Microsoft.XMLHTTP");
+    reader.open("GET", filename, false );
+    reader.send();
+    return reader.responseText.split(/\r\n|\n|\r/);  //split(/(\r\n|\n)/g)
+}
+document.write(textFileToArray('/version.txt')[0]);
+  </script>
+</h1>
 <p style="font-size: 150%;">
 <script src='https://www.google.com/recaptcha/api.js'></script>
 

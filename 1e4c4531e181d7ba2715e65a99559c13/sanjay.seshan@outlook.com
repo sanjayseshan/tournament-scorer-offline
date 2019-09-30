@@ -1,2 +1,0 @@
-723fdd62e0aef62dafdb04b2916e15c5
-Tournament Director

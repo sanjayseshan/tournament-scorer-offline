@@ -23,7 +23,7 @@ function textFileToArray(filename) {
     return reader.responseText.split(/\r\n|\n|\r/);  //split(/(\r\n|\n)/g) 
 }
 document.write(textFileToArray('/version.txt')[0]);
-  </script>. If you are using anything earlier please upgrade using the <script>
+  </script>. <!--If you are using anything earlier please upgrade using the <script>
    function UrlExists(url)
 {
     var http = new XMLHttpRequest();
@@ -34,7 +34,7 @@ document.write(textFileToArray('/version.txt')[0]);
   
 document.write('<a href="/upgrade.php#'+textFileToArray('/' + window.location.href.split('/')[3] + '/tournament.txt')[0]+'">Upgrade Assistant</a><br>');
   
- </script>
+ </script>-->
 <br>
 <h2>Configuration<i style="color: red;"> *</i></h2>
 <?php
