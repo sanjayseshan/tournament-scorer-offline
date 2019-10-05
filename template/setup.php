@@ -1,6 +1,31 @@
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="css/accordian.css">
 
-<h1>EV3Lessons Tournament Director's Setup Panel</h1>
-<p>Page: Tournament Director's Setup Panel <br><i style="color: red;">* Required</i></p>
+<link rel="stylesheet" href="w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+<title>Setup Panel</title>
+ 
+</head>
+<body>
+  <div style="max-width: 1024px;margin:0 auto;">
+    <script> 
+    $(function(){
+      $("#header").load("header.html"); 
+    });
+    </script>
+     <div id="header"></div><br>
+  <section style="padding: 5px 5px 5px 15px;">
+
+  <h2>EV3Lessons Tournament Director's Setup Panel
+</h2>
+  </section><br><section> <div class="text-body" style="font-size: 14px;">
+
+<i style="color: red;">* Required</i></p>
 You are running Tournament Scoring System v<script>
 function textFileToArray(filename) {
     var reader = (window.XMLHttpRequest != null ) 
@@ -244,3 +269,17 @@ Now that you have filled in your teams and number of rounds, your referees are r
 <br><b>DELETE TOURNAMENT</b><br>
 <button onclick="window.location.href = '/delete.php?data=' + window.location.href.split('/')[3]">Delete This Tournament</button>
 -->
+</div>
+
+</section>
+<br>
+    <script> 
+    $(function(){
+      $("#footer").load("footer.html"); 
+    });
+    </script>
+     <div id="footer"></div>
+  </div>
+<script src='js/accordian.js'></script>
+
+</body>

@@ -45,7 +45,31 @@ if (isset($_POST['text']))
 
 
 ?>
-<h1>EV3Lessons Tournament Scoring System v<script>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="css/accordian.css">
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<title>Start</title>
+
+</head>
+<body>
+  <div style="max-width: 1024px;margin:0 auto;">
+    <script>
+    $(function(){
+      $("#header").load("header.html");
+    });
+    </script>
+     <div id="header"></div><br>
+  <section style="padding: 5px 5px 5px 15px;">
+
+  <h2>Start a Tournament<!-- v<script>
 function textFileToArray(filename) {
     var reader = (window.XMLHttpRequest != null )
                ? new XMLHttpRequest()
@@ -55,8 +79,9 @@ function textFileToArray(filename) {
     return reader.responseText.split(/\r\n|\n|\r/);  //split(/(\r\n|\n)/g)
 }
 document.write(textFileToArray('/version.txt')[0]);
-  </script>
-</h1>
+  </script>--></h2>
+</section><br><section> <div class="text-body" style="font-size: 20px;">
+
 <p style="font-size: 150%;">
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
@@ -77,7 +102,16 @@ If your tournament ALREADY exists, you will be taken directly to the urls. If yo
 
 
 </form>
-<b>Load Existing Tournament:</b><br>
+</div>
+</section><br>
+<section>
+<div>
+<h2>Load Existing Tournament:</h2>
+</div>
+</section><br>
+<section>
+<div>
+<br>
 <script>
 function loadtourn(tourn) {
 	document.getElementById('text').value = tourn
@@ -92,7 +126,6 @@ while (x != tournaments.length) {
 x = x+1
 }
 </script>
-
 <?php
 foreach (glob("*/tournament.txt*") as $filename) {
 //	echo $filename."<br />";
@@ -103,3 +136,18 @@ foreach (glob("*/tournament.txt*") as $filename) {
 	fclose($file);
 }
 ?>
+
+</div>
+
+</section>
+<br>
+    <script>
+    $(function(){
+      $("#footer").load("footer.html");
+    });
+    </script>
+     <div id="footer"></div>
+  </div>
+<script src='js/accordian.js'></script>
+
+</body>

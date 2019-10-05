@@ -1,15 +1,29 @@
-<h1>EV3Lessons Tournament Scoring System v<script>
-function textFileToArray(filename) {
-    var reader = (window.XMLHttpRequest != null )
-               ? new XMLHttpRequest()
-               : new ActiveXObject("Microsoft.XMLHTTP");
-    reader.open("GET", filename, false );
-    reader.send();
-    return reader.responseText.split(/\r\n|\n|\r/);  //split(/(\r\n|\n)/g)
-}
-document.write(textFileToArray('/version.txt')[0]);
-  </script>
-</h1>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="css/accordian.css">
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<title>Password Creator</title>
+
+</head>
+<body>
+  <div style="max-width: 1024px;margin:0 auto;">
+<!--    <script>
+    $(function(){
+      $("#header").load("header.html");
+    });
+    </script>
+     <div id="header"></div>--><br>
+  <section style="padding: 5px 5px 5px 15px;">
+
+  <h2>Password Creator:</h2>
+</section><br><section>
+<div class="text-body" style="font-size: 20px;">
 <?php
 
 // configuration
@@ -66,8 +80,19 @@ Role:<select id="role" name="role">
 
 
 </p>
-<br>
-</form>
 
-<br><br>
-Note: Judges should be marked as referee and Head Judges should be marked as Head Referee.
+</form>
+</div>
+
+</section>
+<br>
+    <script>
+    $(function(){
+      $("#footer").load("footer.html");
+    });
+    </script>
+     <div id="footer"></div>
+  </div>
+<script src='js/accordian.js'></script>
+
+</body>

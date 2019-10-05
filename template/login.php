@@ -98,9 +98,36 @@ $text = file_get_contents($file);
 
 
 ?>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="css/accordian.css">
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<title>Login</title>
+
+</head>
+<body>
+  <div style="max-width: 1024px;margin:0 auto;">
+<!--    <script>
+    $(function(){
+      $("#header").load("header.html");
+    });
+    </script>
+     <div id="header"></div>--><br>
+  <section style="padding: 5px 5px 5px 15px;">
+
+  <h2>Login:</h2>
+</section><br><section>
+<div class="text-body" style="font-size: 20px;">
+
 <p style="font-size: 150%;">
 
-<!-- HTML form -->Tournament Login Page.
+<!-- HTML form -->
 <script>document.write('<form action="'+window.location.search+'" method="post">')</script>
 Email:<input type="username" rows="20" cols="50" id="usr" name="usr" value="">
 Password:<input type="password" rows="20" cols="50" id="pas" name="pas" value="">
@@ -109,3 +136,17 @@ Password:<input type="password" rows="20" cols="50" id="pas" name="pas" value=""
 <input type="reset" />
 </form>
 <button onclick="window.location.href = '/' + window.location.href.split('/')[3] + '/'">Back to main page</button></p>
+</div>
+
+</section>
+<br>
+    <script>
+    $(function(){
+      $("#footer").load("footer.html");
+    });
+    </script>
+     <div id="footer"></div>
+  </div>
+<script src='js/accordian.js'></script>
+
+</body>
