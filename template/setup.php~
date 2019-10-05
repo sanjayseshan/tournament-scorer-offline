@@ -76,9 +76,9 @@ if (isset($_POST['text']))
     file_put_contents($file, $_POST['text']);
 
     // redirect to form again
-    //header(sprintf('Location: %s', $url));
+    header(sprintf('Location: %s', $url));
 
-printf('<b style="color: red">Teams have been saved</b><br><!--<a href="">Return</a>.-->');
+printf('<b style="color: red">Teams have been saved</b><br><!--<a href="%s">Return</a>.-->', htmlspecialchars($url));
  
 echo "";
 }
@@ -153,10 +153,10 @@ $file2 = str_replace("\r", "", $file2);
     file_put_contents($file2, $_POST['text2']);
 
     // redirect to form again
-    // header(sprintf('Location: %s', $url2));
+    header(sprintf('Location: %s', $url2));
   //  printf('<a href="%s">Return</a>.', htmlspecialchars($url));
 //   exit();
-    printf('<b style="color: red">Number of Rounds have been saved</b><br><!--<a href="">Return</a>.-->');
+    printf('<b style="color: red">Number of Rounds have been saved</b><br><!--<a href="%s">Return</a>.-->', htmlspecialchars($url));
 }
 
 // read the textfile

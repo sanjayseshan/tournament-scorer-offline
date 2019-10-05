@@ -94,7 +94,7 @@ if (strcmp($filerole, 'Tournament Director') == 0) {
 
 // read the textfile
 
-//$text = file_get_contents($file);
+$text = file_get_contents($file);
 
 
 ?>
