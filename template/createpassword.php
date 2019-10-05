@@ -41,7 +41,7 @@ fwrite($myfile, $txt);
    $txt = $_POST['role'];
 fwrite($myfile, $txt);
 fclose($myfile);
-    header(sprintf('Location: %s', $url));
+    //header(sprintf('Location: %s', $url));
     printf('<a href="%s">Add new user</a>.', htmlspecialchars($url));
 printf('<br><a href="url.html#%s">View Tournament Dashboard</a>.', htmlspecialchars($_GET['data']));
 exit();
