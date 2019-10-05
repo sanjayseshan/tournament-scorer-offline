@@ -1,5 +1,21 @@
 <?php
 
+function recurse_copy($src,$dst) { 
+    $dir = opendir($src); 
+    @mkdir($dst); 
+    while(false !== ( $file = readdir($dir)) ) { 
+        if (( $file != '.' ) && ( $file != '..' )) { 
+            if ( is_dir($src . '/' . $file) ) { 
+                recurse_copy($src . '/' . $file,$dst . '/' . $file); 
+            } 
+            else { 
+                copy($src . '/' . $file,$dst . '/' . $file); 
+            } 
+        } 
+    } 
+    closedir($dir); 
+} 
+  
 // configuration
 $url = 'start.php';
 $file = 'tournaments.txt';
@@ -17,7 +33,8 @@ if (isset($_POST['text']))
 		$name = $_POST['text'];
 		$nameenc = md5($_POST['text']);
 		if (file_exists($nameenc) != 1) {
-			exec('cp -r ' . 'template/ ' . $nameenc);
+//			exec('cp -r ' . 'template/ ' . $nameenc);
+                        recurse_copy('template/', $nameenc);
 //			mkdir($data . '/images', 0777);
 //			copy('template/', $nameenc);
 			header( 'Location: ' . $nameenc . '/createpassword.php?data=' . $nameenc) ; 
