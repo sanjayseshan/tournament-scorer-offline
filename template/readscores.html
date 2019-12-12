@@ -17,7 +17,7 @@
       <script type="text/javascript" src="/gs_sortable.js"></script>
       <script type="text/javascript">
 	dir = window.location.hash.substring(1);
-
+	bufferDraw = ""
 	function textFileToArray(filename) {
 	    var reader = (window.XMLHttpRequest != null ) 
 		? new XMLHttpRequest() 
@@ -64,9 +64,9 @@
 	function gentable(team) {
 	    tourn = window.location.href.split('/')[3]
 	    fwteam = team.split(' ')[0];
-	    document.write('<tr>');
+	    bufferDraw += '<tr>';
 	    c = 1;
-	    document.write('  <td>'+team+'</td>');
+	    bufferDraw +='  <td>'+team+'</td>'
 	    thisscores = []
 	    while (c < col) {
 		if (fileExists(fwteam+'-'+c+'.txt') == true) {
@@ -75,16 +75,16 @@
 		    teamscore = 0
 		}
 		thisscores.push(parseInt(teamscore))
-		document.write(' <td id="'+fwteam+'-'+c+'">'+String(teamscore)+'</td>');
+	bufferDraw += ' <td id="'+fwteam+'-'+c+'">'+String(teamscore)+'</td>';
 		c++;
 	    }
-	    document.write(' <td id="'+fwteam+'-max">'+String(arrayMax(thisscores))+'</td>');
+	    bufferDraw += ' <td id="'+fwteam+'-max">'+String(arrayMax(thisscores))+'</td>'
 
-	    document.write('</tr>');
+	   bufferDraw += '</tr>'
 	}
 	</script>
     </head>
-    <body>
+    <body onload="drawScreen()">
 
 
       <title>Scoreboard</title>
@@ -112,28 +112,33 @@
       <br>
       <!--** Refreshes every 60 seconds-->
       <br>
-      <table style='width:100%;font-size:200%;border-collapse: collapse;text-align:center;' border="1" id="my_table">
-	<thead>
-	  <tr style="background-color: lime"><td>
-	      Team Name
-	    </td><script>
+	<div id="drawMe"></div>
+      <script>
+	function drawScreen() {
+	    	    document.getElementById("drawMe").innerHTML = ""
+	    bufferDraw = ""
+	    bufferDraw += '      <table style="width:100%;font-size:200%;border-collapse: collapse;text-align:center;" border="1" id="my_table"> <thead> <tr style="background-color: lime"><td>Team Name</td>'
 	      n = 1;
 	      while (n < col) {
-		  document.write(' <td>Round '+n+'</td>');
+		  bufferDraw += ' <td>Round '+n+'</td>';
 		  n++;
 	      }
-	      </script>
+	    bufferDraw += "<td>High Score</td></tr></thead>"
 
-	    <td>High Score</td>
-	</tr></thead>
-	<script>
 	  n = 0;
 	  while (n < teamlist.length) {
 	      gentable(teamlist[n]);
 	      n++;
 	  }
-	</script>
-      </table>
+	    bufferDraw += "</table>"
+
+
+	    document.getElementById("drawMe").innerHTML = bufferDraw
+	    window.scrollTo({ top: 0 });
+
+	}
+				  </script>
+
       <script>
 	//language = window.location.hash.substring(1);
 	/*
@@ -229,4 +234,29 @@
   }
 
   setAutoScroll(20);
+
+
+  a=0
+function getDocHeight() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+	console.log("bottom");
+//	arr = []
+//	if (a==0) {
+//	    document.getElementById('content').innerHTML=""
+	//listMajors()
+
+	    a = 1
+	console.log("reset")
+	drawScreen()
+//	location.reload();
+//	location.reload(true);
+//window.location.href = window.location.href
+
+//	}
+    } else {
+	console.log("not bottom")
+	a = 0
+    }
+  }
+var t=setInterval(getDocHeight,2000);
 </script>
